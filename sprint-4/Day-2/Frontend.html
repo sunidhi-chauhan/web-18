@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(1,auto);
+            gap:20px;
+
+        }
+       p+img{
+            height: 50px;
+            padding-left: 80px;
+           
+        }
+        p,h3{
+           text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>frontend</h1> -->
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script>
+    var investorsArr=JSON.parse(localStorage.getItem("investorData"))||[]
+    console.log(investorsArr)
+    var investorsData =[
+        {name:"Vijay Shekhar Sharma" ,
+        img:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+        logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg",
+        role:"Founder & CEO",
+    },
+    {name:"Kunal Shah",
+     img:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+     logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png",
+     role:"Founder",
+
+     },
+    {name:"Amrish Rau",
+     img:"https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg",
+     logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png",
+     role:"CEO",
+
+    },
+    {name:"Sampad Swain",
+    img:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg",
+    logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png",
+    role:"Co-Founder & CEO",
+
+    },
+
+    ];
+    investorsData.forEach(function(elem){
+        var box=document.createElement("div");
+        
+        var investor_img=document.createElement("img");
+        investor_img.setAttribute("src",elem.img)
+        var investor_name=document.createElement("h3");
+        investor_name.innerText=elem.name
+        var investor_role=document.createElement("p");
+        investor_role.innerText=elem.role
+        var investor_logo=document.createElement("img");
+        investor_logo.setAttribute("src",elem.logo)
+        
+
+        box.append(investor_img,investor_name,investor_role,investor_logo)
+        document.querySelector("#container").append(box);
+    });
+</script>

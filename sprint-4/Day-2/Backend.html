@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <div id="navbar">
+        <div><a href="Backend.html">Backend</a></div>
+        <div><a href="Frontend.html">Frontend</a></div>
+    </div>
+    
+    <form id="form">
+    <input id="name" type="text" placeholder="Enter-Name">
+    <br><br><br>
+    <input id="imgUrl" type="text" placeholder="Enter_Img_Url">
+    <br><br><br>
+    <input id="logo" type="text" placeholder="company_logo">
+    <br><br><br>
+    <input id="role" type="text" placeholder="role">
+    <br><br><br>
+    <input type="submit"/>
+    <br><br><br>
+    </form>
+</body>
+</html>
+<script>
+    document.querySelector("#form").addEventListener("submit",investorsFun);
+    var investorArr=JSON.parse(localStorage. getItem("investorData")) || []
+
+    function investorsFun()
+    {
+        event.preventDefault();
+            var investorobj= {
+                investorImg:form.name.value,
+                investorName:form.imgUrl.value,
+                investorRole:form.logo.value,
+                investorCompanyLogo:form.role.value,
+            };
+            // console.log(investorobj)
+            investorArr.push(investorobj);
+            console.log(investorArr)
+            localStorage.setItem("investorData",JSON.stringify(investorArr))
+
+        
+
+    }
+</script>

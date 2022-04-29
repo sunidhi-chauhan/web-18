@@ -1,0 +1,25 @@
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    width: 40%;
+    background-color: rgb(112, 112, 183);
+    font-size: 28px;
+
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+form{
+    width: 40%;
+    background-color:lightblue;
+    height: 300px;
+    display: block;
+    align-items: center;
+    margin: 6% auto;
+    /* text-align: center; */
+    margin-top: 40px;
+    padding-top: 5px;
+    padding-left: 30px;
+}
